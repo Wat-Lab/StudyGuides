@@ -1,0 +1,104 @@
+command line: $ docker (will give list of commands)
+#docker [OPTIONS] COMMAND [ARG...]  (will provide list of commands)
+
+#docker images
+    #The docker images command lists out all the Docker Images that are present on your Docker Host. The output of this command represents the name of docker image, its tag, the image Id, the creation time, and the size respectively
+#docker rmi
+    #The docker rmi command allows us to remove an image or images from the docker host.
+#docker exec
+    #The exec command is used to run a new command in a running container. The command started using docker exec only runs while the container's primary process is running, and it is not restarted if the container is restarted.
+#docker history
+    ##This command shows the history of a docker image with the image name mentioned in the command.
+#docker info
+    #This command helps in displaying system Information.
+#docker pull
+    #This command pulls up an image from the registry. By default, docker pull pulls a single image from the registry. A repository can contain multiple images.
+#docker ps
+    #This is the essential command to list existing docker containers which are present in running state. Here, ps stands for “Process Status”.
+#docker create
+    #This command helps to create a new container which is writable layer over the specified image. It also prepares it for running a specific command.
+#docker attach
+    #This command will attach your terminal’s standard output, input and error streams to a container which is running using its ID or name.
+#docker stop
+    #The docker stop command stops the container gracefully, that’s the difference between a kill and stop commands.
+#docker kill
+    #This command helps to kill one or more running containers.
+#docker rename
+    #This command helps to rename a container.
+#docker update
+   #This command is used to update configuration of one or more containers The docker update command dynamically updates container configuration.
+
+
+#Creating Docker File (Criteria)
+    #First line includes comments , starting with ‘#’
+    #Next line should start with the FROM keyword. 
+        #It helps to specify from where we need to create a base Image for the image.
+    #Next command includes the person who will maintain the image. 
+        #Here we need to specify the MAINTAINER keyword and their email id.
+    #The RUN command will run the instructions against the image.
+    #The last Command will specify the message we need to display to the User.
+
+
+#Images are stored up in a Docker Image Registry for organization and collaboration purposes. That is Docker Hub.
+#To Run any tool, an image is pulled of that tool from the Hub and run as a container.
+#It also helps you create an automated environment wherein changes are made by the developer that can be built, tested and pushed, apart from saving and shipping containers.
+#Example: We can pull windows containers or even ubuntu containers and run.
+#Note: Name of the file has to be Dockerfile with D as CAPITAL
+
+#docker build
+    #This command helps us build docker images from DockerFile.
+    #The syntax for it goes as,
+ docker build -t ImageName: TagName dir
+Here,
+-t − to mention a tag to the image
+ImageName − The name we want to assign to our image.
+TagName − the tag we want to give to our image.
+Dir − The directory of the Docker File.
+
+Docker Engine is the main component of the whole Docker system.
+Docker follows the client-server architecture.
+It has three main parts,
+    Docker Client
+    Docker Host
+    Registry
+The Docker Daemon plays the main role of building, running and also distributing the Docker containers.
+The Docker client interacts with the Docker daemon, which runs on the same system. They connect with each other through a network interface.
+
+Docker Daemon
+    Also known as Dockerd.It can create and manage objects which include Containers,images and networks etc.
+    Rest API instructs it what has to be done.
+The users interact with the Docker through a Docker Client.
+    When docker commands are run, it is sent through the Client to the Daemon. Docker Commands uses the Docker API.
+    The client can interact with more than one Docker Daemon.
+The location where Docker images are stored is the docker Registry.
+    The Default location of the Images is the Docker Hub, it can be said as the Public registry.
+    Users also have an option of creating their own Private Registry.
+    Docker commands such as Docker Pull and Docker Run, pull the images from the Configured registry.
+Once an image is run, it creates a Docker Container.
+    We can create, start , stop, move,or even delete a Container using the CommandLine.
+
+The other container functions are handled by additional software libraries.
+These libraries include libnetwork and swarmkit for networking and storage management capabilities respectively.
+
+AUFS:
+AUFS is a union file system.It was the default storage driver used for managing images and layers on Docker For Ubuntu versions previously.
+AUFS storage driver uses the aufs technology, and it ensures a smooth functionality of containers with good memory usage.
+It is a stable driver, which is used for production-ready applications.
+One Functionality of AUFS to be considered is its high-write Activity.
+DEVICEMAPPER:
+Devicemapper is also a Stable driver and also ensures a smooth Docker Experience.
+It helps the testers for testing the applications in the lab.
+This driver operates at Block level rather than File level.
+Btrfs:
+Btrfs supports the advanced storage technologies which makes it great for docker and also is a next-generation copy-on-write filesystem.
+It is included in the mainline Linux kernel.
+It also has high-write activity.
+This driver is used at its maximum for image and container management.
+Overlay:
+Overlay is a union filesystem that is similar to AUFS, with faster implementation.
+It is a stable driver and has a good memory usage.
+It is good for testing applications in lab
+ZFS:
+ZFS supports advanced storage technologies such as compression,deduplication, volume management, snapshots, replication and many more.
+It is also a stable driver and good for testing applications
+It was developed by sun Microsystems.
