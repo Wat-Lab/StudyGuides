@@ -44,6 +44,13 @@
 - **Binary (Base 2)**: Only 0 and 1 (computer default).
 - **Hexadecimal (Base 16)**: Digits 0–9 and A–F, often used in computing.
 
+| System | Base | Symbols          | Example of “10” |
+|-------:|:----:|------------------|-----------------|
+| Unary  |  1   | marks `||||`     | 2 = `||`        |
+| Decimal| 10   | 0–9              | ten             |
+| Binary |  2   | 0,1              | two             |
+| Hex    | 16   | 0–9, A–F         | sixteen         |
+
 ### Text Representation
 - **ASCII**: Maps numbers to characters (e.g., 65 = 'A').
 - **Unicode**: Extended standard, supports more symbols, languages, emoji.
@@ -55,6 +62,13 @@
   - Example: (255, 0, 0) = Red.
 - **Images** are grids of pixels, each with an RGB value.
 - **Video** = sequence of images played rapidly.
+
+#### Pixel Grid (ASCII)
+
+```
+[ (255,0,0) | (0,255,0) | (0,0,255) ]
+[ (255,255,0) | (255,0,255) | (0,255,255) ]
+```
 
 ---
 
